@@ -1,23 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import GameScreen from './screens/GameScreen';
-import HomeScreen from './screens/HomeScreen';
+import MainScreen from './screens/MainScreen';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style="light" hidden />
+      <StatusBar style="light" />
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          animation: 'fade',
+          contentStyle: { backgroundColor: '#000000' }
         }}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen name="Main" component={MainScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
